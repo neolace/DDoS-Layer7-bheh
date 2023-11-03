@@ -55,11 +55,13 @@ while True:
     try:
         if time.time() > timeout:
             break
-        else:
-            pass
         sock.sendto(bytes, (ip, port))
         sent += 1
-        print(colored("Packets are being sent like crazy, check if the target is down... we sent %s packets to this Target: %s" % (
-            sent, ip), 'green'))
+        print(
+            colored(
+                f"Packets are being sent like crazy, check if the target is down... we sent {sent} packets to this Target: {ip}",
+                'green',
+            )
+        )
     except KeyboardInterrupt:
         sys.exit()
